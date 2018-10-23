@@ -1,0 +1,23 @@
+<h3>Featured News</h3>
+<div class="tabs-wrap">
+    <tabset>
+        <tab heading="More News" active="true" (select)="onTabChange($event)">
+            <div class="tabs-text">
+                <ul *ngFor="let news of moreNews">
+                    <li>
+                        <a *ngIf="news != null" [innerHtml]="news.title" [routerLink]="[news.prefixUrl, news.articleId]"></a>
+                    </li>
+                </ul>
+            </div>
+        </tab>
+        <tab heading="Most Read" (select)="onTabChange($event)">
+            <div class="tabs-text">
+                <ul *ngFor="let news of mostRead">
+                    <li>
+                        <a *ngIf="news != null" [innerHtml]="news.title" [routerLink]="[news.prefixUrl, news.articleId]"></a>
+                    </li>
+                </ul>
+            </div>
+        </tab>
+    </tabset>
+</div>

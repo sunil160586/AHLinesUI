@@ -1,0 +1,46 @@
+<div class="latest-news-wrap">
+    <h3>LATEST NEWS</h3>
+    <div class="news-format-one">
+        <div class="row">
+            <div class="col-md-6">
+                <a class="news-item news-item-big" *ngIf="latestBreakingNews != null" [routerLink]="[latestBreakingNews.prefixUrl, latestBreakingNews.articleId]">
+                    <figure class="news-img">
+                        <img *ngIf="latestBreakingNews != null" [src]="latestBreakingNews.imageUrl" alt="" onerror="this.src='./assets/images/noimage250x250.jpg'">
+                    </figure>
+                    <div class="news-text">
+                        <h5 *ngIf="latestBreakingNews != null" [innerHtml]="latestBreakingNews.title"></h5>
+                        <p class="news-desc" *ngIf="latestBreakingNews != null" [innerHtml]="latestBreakingNews.abstract"></p>
+                        <p class="news-date" *ngIf="latestBreakingNews != null"><i class="fa fa-calendar"></i>{{latestBreakingNews.posted}}</p>
+                    </div>
+                </a>
+                <a class="news-item news-item-big" *ngIf="specialBreakingNews != null" [routerLink]="['/news/', 'special', specialBreakingNews.articleId]">
+                    <figure class="news-img">
+                        <img *ngIf="specialBreakingNews != null" [src]="specialBreakingNews.imageUrl" alt="" onerror="this.src='./assets/images/noimage250x250.jpg'">
+                    </figure>
+                    <div class="news-text">
+                        <h5 *ngIf="specialBreakingNews != null" [innerHtml]="specialBreakingNews.title"></h5>
+                        <p class="news-desc" *ngIf="specialBreakingNews != null" [innerHtml]="specialBreakingNews.abstract"></p>
+                        <p class="news-date" *ngIf="specialBreakingNews != null"><i class="fa fa-calendar"></i>{{specialBreakingNews.posted}}</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6">
+                <a class="news-item" [routerLink]="[news.prefixUrl, news.articleId]" *ngFor="let news of latestNews">
+                    <figure class="news-img">
+                        <img *ngIf="news != null" [src]="news.imageSmallUrl" alt="" onerror="this.src='./assets/images/noimage80x80.jpg'">
+                    </figure>
+                    <div class="news-text">
+                        <h5 *ngIf="news != null" [innerHtml]="news.title"></h5>
+                        <p class="news-date" *ngIf="news !=null">
+                            <i class="fa fa-calendar"></i>{{news.posted}}</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="more-block">
+            <a class="more-btn" [routerLink]="['/home/news/latest']">Read More
+                <i class="fa fa-angle-double-right"></i>
+            </a>
+        </div>
+    </div>
+</div>

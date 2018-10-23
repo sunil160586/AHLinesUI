@@ -1,0 +1,502 @@
+<div class="main-wrap">
+    <div class="container">
+        <div class="main-block news-page-wrap">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="total-news-wrap">
+                        <h3>Special News</h3>
+                        <div class="news-format-one">
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <a class="news-item news-item-big" *ngIf="specialBreakingNews != null" [routerLink]="['/news/', 'special', specialBreakingNews.articleId]">
+                                        <figure class="news-img">
+                                            <img *ngIf="specialBreakingNews != null" [src]="specialBreakingNews.imageUrl" alt="" onerror="this.src='./assets/images/noimage.jpg'">
+                                        </figure>
+                                        <div class="news-text">
+                                            <h5 *ngIf="specialBreakingNews != null" [innerHtml]="specialBreakingNews.title"></h5>
+                                            <p class="news-desc" *ngIf="specialBreakingNews != null" [innerHtml]="specialBreakingNews.abstract"></p>
+                                            <p class="news-date" *ngIf="specialBreakingNews != null">
+                                                <i class="fa fa-calendar"></i>
+                                                {{specialBreakingNews.posted}}
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-md-7">
+                                    <div class="container" *ngFor="let specialNews of specialLatestNews">
+                                        <a class="news-item" *ngIf="specialNews != null" [routerLink]="['/news/', 'special', specialNews.articleId]">
+                                            <figure class="news-img">
+                                                <img *ngIf="specialNews != null" [src]="specialNews.imageUrl" alt="" onerror="this.src='./assets/images/noimage.jpg'">
+                                            </figure>
+                                            <div class="news-text">
+                                                <h5 *ngIf="specialNews != null" [innerHtml]="specialNews.title"></h5>
+                                                <p class="news-date" *ngIf="specialNews != null">
+                                                    <i class="fa fa-calendar"></i>{{specialNews.posted}}</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="more-block">
+                                <a class="more-btn" [routerLink]="['/news/special']">Read More
+                                    <i class="fa fa-angle-double-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="total-news-wrap">
+                        <h3>Seemandhra News</h3>
+                        <div class="news-format-one">
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <a class="news-item news-item-big" *ngIf="seemandhraBreakingNews != null" [routerLink]="['/news/','andhra',seemandhraBreakingNews.articleId]">
+                                        <figure class="news-img">
+                                            <img *ngIf="seemandhraBreakingNews != null" [src]="seemandhraBreakingNews.imageUrl" alt="" onerror="this.src='./assets/images/noimage.jpg'">
+                                        </figure>
+                                        <div class="news-text">
+                                            <h5 *ngIf="seemandhraBreakingNews != null" [innerHtml]="seemandhraBreakingNews.title"></h5>
+                                            <p class="news-desc" *ngIf="seemandhraBreakingNews != null" [innerHtml]="seemandhraBreakingNews.abstract"></p>
+                                            <p class="news-date" *ngIf="seemandhraBreakingNews != null">
+                                                <i class="fa fa-calendar"></i>{{seemandhraBreakingNews.posted}}</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-md-7">
+                                    <div class="container" *ngFor="let seemandhraNews of seemandhraLatestNews">
+                                        <a class="news-item" *ngIf="seemandhraNews != null" [routerLink]="['/news/','andhra',seemandhraNews.articleId]">
+                                            <figure class="news-img">
+                                                <img *ngIf="seemandhraNews != null" [src]="seemandhraNews.imageUrl" alt="" onerror="this.src='./assets/images/noimage.jpg'">
+                                            </figure>
+                                            <div class="news-text">
+                                                <h5 *ngIf="seemandhraNews != null" [innerHtml]="addThreeDots(seemandhraNews.title, 50)"></h5>
+                                                <p class="news-date" *ngIf="seemandhraNews != null">
+                                                    <i class="fa fa-calendar"></i>{{seemandhraNews.posted}}</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="more-block">
+                                <a class="more-btn" [routerLink]="['/news/andhra']">Read More
+                                    <i class="fa fa-angle-double-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="total-news-wrap">
+                        <h3>Telangana News</h3>
+                        <div class="news-format-one">
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <a class="news-item news-item-big" *ngIf="telanganaBreakingNews != null" [routerLink]="['/news/','telangana',telanganaBreakingNews.articleId]">
+                                        <figure class="news-img">
+                                            <img *ngIf="telanganaBreakingNews != null" [src]="telanganaBreakingNews.imageUrl" alt="" onerror="this.src='./assets/images/noimage.jpg'">
+                                        </figure>
+                                        <div class="news-text">
+                                            <h5 *ngIf="telanganaBreakingNews != null" [innerHtml]="telanganaBreakingNews.title"></h5>
+                                            <p class="news-desc" *ngIf="telanganaBreakingNews != null" [innerHtml]="telanganaBreakingNews.abstract"></p>
+                                            <p class="news-date" *ngIf="telanganaBreakingNews != null">
+                                                <i class="fa fa-calendar"></i>{{telanganaBreakingNews.posted}}</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-md-7">
+                                    <div class="container" *ngFor="let telanganaNews of telanganaLatestNews">
+                                        <a class="news-item" *ngIf="telanganaNews != null" [routerLink]="['/news/','telangana',telanganaNews.articleId]">
+                                            <figure class="news-img">
+                                                <img *ngIf="telanganaNews != null" [src]="telanganaNews.imageUrl" alt="" onerror="this.src='./assets/images/noimage.jpg'">
+                                            </figure>
+                                            <div class="news-text">
+                                                <h5 *ngIf="telanganaNews != null" [innerHtml]="telanganaNews.title"></h5>
+                                                <p class="news-date" *ngIf="telanganaNews != null">
+                                                    <i class="fa fa-calendar"></i>{{telanganaNews.posted}}</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="more-block">
+                                <a class="more-btn" [routerLink]="['/news/telangana']">Read More
+                                    <i class="fa fa-angle-double-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="total-news-wrap">
+                        <h3>Sports News</h3>
+                        <div class="news-format-one">
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <a class="news-item news-item-big" *ngIf="sportsBreakingNews != null" [routerLink]="['/news/','sports',sportsBreakingNews.articleId]">
+                                        <figure class="news-img">
+                                            <img *ngIf="sportsBreakingNews != null" [src]="sportsBreakingNews.imageUrl" alt="" onerror="this.src='./assets/images/noimage.jpg'">
+                                        </figure>
+                                        <div class="news-text">
+                                            <h5 *ngIf="sportsBreakingNews != null" [innerHtml]="sportsBreakingNews.title"></h5>
+                                            <p class="news-desc" *ngIf="sportsBreakingNews != null" [innerHtml]="sportsBreakingNews.abstract"></p>
+                                            <p class="news-date" *ngIf="sportsBreakingNews != null">
+                                                <i class="fa fa-calendar"></i>{{sportsBreakingNews.posted}}</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-md-7">
+                                    <div class="container" *ngFor="let sportsNews of sportsLatestNews">
+                                        <a class="news-item" *ngIf="sportsNews != null" [routerLink]="['/news/','sports',sportsNews.articleId]">
+                                            <figure class="news-img">
+                                                <img *ngIf="sportsNews != null" [src]="sportsNews.imageUrl" alt="" onerror="this.src='./assets/images/noimage.jpg'">
+                                            </figure>
+                                            <div class="news-text">
+                                                <h5 *ngIf="sportsNews != null" [innerHtml]="sportsNews.title"></h5>
+                                                <p class="news-date" *ngIf="sportsNews != null">
+                                                    <i class="fa fa-calendar"></i>{{sportsNews.posted}}</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="more-block">
+                                <a class="more-btn" [routerLink]="['/news/sports']">Read More
+                                    <i class="fa fa-angle-double-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="total-news-wrap">
+                        <h3>National News</h3>
+                        <div class="news-format-one">
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <a class="news-item news-item-big" *ngIf="nationalBreakingNews != null" [routerLink]="['/news/','national',nationalBreakingNews.articleId]">
+                                        <figure class="news-img">
+                                            <img *ngIf="nationalBreakingNews != null" [src]="nationalBreakingNews.imageUrl" alt="" onerror="this.src='./assets/images/noimage.jpg'">
+                                        </figure>
+                                        <div class="news-text">
+                                            <h5 *ngIf="nationalBreakingNews != null" [innerHtml]="nationalBreakingNews.title"></h5>
+                                            <p class="news-desc" *ngIf="nationalBreakingNews != null" [innerHtml]="nationalBreakingNews.abstract"></p>
+                                            <p class="news-date" *ngIf="nationalBreakingNews != null">
+                                                <i class="fa fa-calendar"></i>{{nationalBreakingNews.posted}}</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-md-7">
+                                    <div class="container" *ngFor="let nationalNews of nationalLatestNews">
+                                        <a class="news-item" *ngIf="nationalNews != null" [routerLink]="['/news/','national',nationalNews.articleId]">
+                                            <figure class="news-img">
+                                                <img *ngIf="nationalNews != null" [src]="nationalNews.imageUrl" alt="" onerror="this.src='./assets/images/noimage.jpg'">
+                                            </figure>
+                                            <div class="news-text">
+                                                <h5 *ngIf="nationalNews != null" [innerHtml]="nationalNews.title"></h5>
+                                                <p class="news-date" *ngIf="nationalNews != null">
+                                                    <i class="fa fa-calendar"></i>{{nationalNews.posted}}</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="more-block">
+                                <a class="more-btn" [routerLink]="['/news/national']">Read More
+                                    <i class="fa fa-angle-double-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="total-news-wrap">
+                        <h3>World News</h3>
+                        <div class="news-format-one">
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <a class="news-item news-item-big" *ngIf="worldBreakingNews != null" [routerLink]="['/news/','world',worldBreakingNews.articleId]">
+                                        <figure class="news-img">
+                                            <img *ngIf="worldBreakingNews != null" [src]="worldBreakingNews.imageUrl" alt="" onerror="this.src='./assets/images/noimage.jpg'">
+                                        </figure>
+                                        <div class="news-text">
+                                            <h5 *ngIf="worldBreakingNews != null" [innerHtml]="worldBreakingNews.title"></h5>
+                                            <p class="news-desc" *ngIf="worldBreakingNews != null" [innerHtml]="worldBreakingNews.abstract"></p>
+                                            <p class="news-date" *ngIf="worldBreakingNews != null">
+                                                <i class="fa fa-calendar"></i>{{worldBreakingNews.posted}}</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-md-7">
+                                    <div class="container" *ngFor="let worldNews of worldLatestNews">
+                                        <a class="news-item" *ngIf="worldNews != null" [routerLink]="['/news/','world',worldNews.articleId]">
+                                            <figure class="news-img">
+                                                <img *ngIf="worldNews != null" [src]="worldNews.imageUrl" alt="" onerror="this.src='./assets/images/noimage.jpg'">
+                                            </figure>
+                                            <div class="news-text">
+                                                <h5 *ngIf="worldNews != null" [innerHtml]="worldNews.title"></h5>
+                                                <p class="news-date" *ngIf="worldNews != null">
+                                                    <i class="fa fa-calendar"></i>{{worldNews.posted}}</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="more-block">
+                                <a class="more-btn" [routerLink]="['/news/world']">Read More
+                                    <i class="fa fa-angle-double-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="total-news-wrap">
+                        <h3>NRI News</h3>
+                        <div class="news-format-one">
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <a class="news-item news-item-big" *ngIf="nriBreakingNews != null" [routerLink]="['/news/','nri',nriBreakingNews.articleId]">
+                                        <figure class="news-img">
+                                            <img *ngIf="nriBreakingNews != null" [src]="nriBreakingNews.imageUrl" alt="" onerror="this.src='./assets/images/noimage.jpg'">
+                                        </figure>
+                                        <div class="news-text">
+                                            <h5 *ngIf="nriBreakingNews != null" [innerHtml]="nriBreakingNews.title"></h5>
+                                            <p class="news-desc" *ngIf="nriBreakingNews != null" [innerHtml]="nriBreakingNews.abstract"></p>
+                                            <p class="news-date" *ngIf="nriBreakingNews != null">
+                                                <i class="fa fa-calendar"></i>{{nriBreakingNews.posted}}</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-md-7">
+                                    <div class="container" *ngFor="let nriNews of nriLatestNews">
+                                        <a class="news-item" *ngIf="nriNews != null" [routerLink]="['/news/','nri',nriNews.articleId]">
+                                            <figure class="news-img">
+                                                <img *ngIf="nriNews != null" [src]="nriNews.imageUrl" alt="" onerror="this.src='./assets/images/noimage.jpg'">
+                                            </figure>
+                                            <div class="news-text">
+                                                <h5 *ngIf="nriNews != null" [innerHtml]="nriNews.title"></h5>
+                                                <p class="news-date" *ngIf="nriNews != null">
+                                                    <i class="fa fa-calendar"></i>{{nriNews.posted}}</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="more-block">
+                                <a class="more-btn" [routerLink]="['/news/nri']">Read More
+                                    <i class="fa fa-angle-double-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="total-news-wrap">
+                        <h3>Crime Watch News</h3>
+                        <div class="news-format-one">
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <a class="news-item news-item-big" *ngIf="crimeWatchBreakingNews != null" [routerLink]="['/news/','crime',crimeWatchBreakingNews.articleId]">
+                                        <figure class="news-img">
+                                            <img *ngIf="crimeWatchBreakingNews != null" [src]="crimeWatchBreakingNews.imageUrl" alt="" onerror="this.src='./assets/images/noimage.jpg'">
+                                        </figure>
+                                        <div class="news-text">
+                                            <h5 *ngIf="crimeWatchBreakingNews != null" [innerHtml]="crimeWatchBreakingNews.title"></h5>
+                                            <p class="news-desc" *ngIf="crimeWatchBreakingNews != null" [innerHtml]="crimeWatchBreakingNews.abstract"></p>
+                                            <p class="news-date" *ngIf="crimeWatchBreakingNews != null">
+                                                <i class="fa fa-calendar"></i>{{crimeWatchBreakingNews.posted}}</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-md-7">
+                                    <div class="container" *ngFor="let crimeWatchNews of crimeWatchLatestNews">
+                                        <a class="news-item" *ngIf="crimeWatchNews != null" [routerLink]="['/news/','crime',crimeWatchNews.articleId]">
+                                            <figure class="news-img">
+                                                <img *ngIf="crimeWatchNews != null" [src]="crimeWatchNews.imageUrl" alt="" onerror="this.src='./assets/images/noimage.jpg'">
+                                            </figure>
+                                            <div class="news-text">
+                                                <h5 *ngIf="crimeWatchNews != null" [innerHtml]="crimeWatchNews.title"></h5>
+                                                <p class="news-date" *ngIf="crimeWatchNews != null">
+                                                    <i class="fa fa-calendar"></i>{{crimeWatchNews.posted}}</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="more-block">
+                                <a class="more-btn" [routerLink]="['/news/crime']">Read More
+                                    <i class="fa fa-angle-double-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="total-news-wrap">
+                        <h3>Business News</h3>
+                        <div class="news-format-one">
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <a class="news-item news-item-big" *ngIf="businessBreakingNews != null" [routerLink]="['/news/','business',businessBreakingNews.articleId]">
+                                        <figure class="news-img">
+                                            <img *ngIf="businessBreakingNews != null" [src]="businessBreakingNews.imageUrl" alt="" onerror="this.src='./assets/images/noimage.jpg'">
+                                        </figure>
+                                        <div class="news-text">
+                                            <h5 *ngIf="businessBreakingNews != null" [innerHtml]="businessBreakingNews.title"></h5>
+                                            <p class="news-desc" *ngIf="businessBreakingNews != null" [innerHtml]="businessBreakingNews.abstract"></p>
+                                            <p class="news-date" *ngIf="businessBreakingNews != null">
+                                                <i class="fa fa-calendar"></i>{{businessBreakingNews.posted}}</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-md-7">
+                                    <div class="container" *ngFor="let businessNews of businessLatestNews">
+                                        <a class="news-item" *ngIf="businessNews != null" [routerLink]="['/news/','business',businessNews.articleId]">
+                                            <figure class="news-img">
+                                                <img *ngIf="businessNews != null" [src]="businessNews.imageUrl" alt="" onerror="this.src='./assets/images/noimage.jpg'">
+                                            </figure>
+                                            <div class="news-text">
+                                                <h5 *ngIf="businessNews != null" [innerHtml]="businessNews.title"></h5>
+                                                <p class="news-date" *ngIf="businessNews != null">
+                                                    <i class="fa fa-calendar"></i>{{businessNews.posted}}</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="more-block">
+                                <a class="more-btn" [routerLink]="['/news/business']">Read More
+                                    <i class="fa fa-angle-double-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="total-news-wrap">
+                        <h3>Fashion &amp; Life Style News</h3>
+                        <div class="news-format-one">
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <a class="news-item news-item-big" *ngIf="fashionAndLifeStyleBreakingNews != null" [routerLink]="['/news/','fashion',fashionAndLifeStyleBreakingNews.articleId]">
+                                        <figure class="news-img">
+                                            <img *ngIf="fashionAndLifeStyleBreakingNews != null" [src]="fashionAndLifeStyleBreakingNews.imageUrl" alt="" onerror="this.src='./assets/images/noimage.jpg'">
+                                        </figure>
+                                        <div class="news-text">
+                                            <h5 *ngIf="fashionAndLifeStyleBreakingNews != null" [innerHtml]="fashionAndLifeStyleBreakingNews.title"></h5>
+                                            <p class="news-desc" *ngIf="fashionAndLifeStyleBreakingNews != null" [innerHtml]="fashionAndLifeStyleBreakingNews.abstract"></p>
+                                            <p class="news-date" *ngIf="fashionAndLifeStyleBreakingNews != null">
+                                                <i class="fa fa-calendar"></i>{{fashionAndLifeStyleBreakingNews.posted}}</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-md-7">
+                                    <div class="container" *ngFor="let fashionAndLifeStyleNews of fashionAndLifeStyleLatestNews">
+                                        <a class="news-item" *ngIf="fashionAndLifeStyleNews != null" [routerLink]="['/news/','fashion',fashionAndLifeStyleNews.articleId]">
+                                            <figure class="news-img">
+                                                <img *ngIf="fashionAndLifeStyleNews != null" [src]="fashionAndLifeStyleNews.imageUrl" alt="" onerror="this.src='./assets/images/noimage.jpg'">
+                                            </figure>
+                                            <div class="news-text">
+                                                <h5 *ngIf="fashionAndLifeStyleNews != null" [innerHtml]="fashionAndLifeStyleNews.title"></h5>
+                                                <p class="news-date" *ngIf="fashionAndLifeStyleNews != null">
+                                                    <i class="fa fa-calendar"></i>{{fashionAndLifeStyleNews.posted}}</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="more-block">
+                                <a class="more-btn" [routerLink]="['/news/fashion']">Read More
+                                    <i class="fa fa-angle-double-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="total-news-wrap">
+                        <h3>Science &amp; Technology News</h3>
+                        <div class="news-format-one">
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <a class="news-item news-item-big" *ngIf="scienceAndTechnologyBreakingNews != null" [routerLink]="['/news/','science',scienceAndTechnologyBreakingNews.articleId]">
+                                        <figure class="news-img">
+                                            <img *ngIf="scienceAndTechnologyBreakingNews != null" [src]="scienceAndTechnologyBreakingNews.imageUrl" alt="" onerror="this.src='./assets/images/noimage.jpg'">
+                                        </figure>
+                                        <div class="news-text">
+                                            <h5 *ngIf="scienceAndTechnologyBreakingNews != null" [innerHtml]="scienceAndTechnologyBreakingNews.title"></h5>
+                                            <p class="news-desc" *ngIf="scienceAndTechnologyBreakingNews != null" [innerHtml]="scienceAndTechnologyBreakingNews.abstract"></p>
+                                            <p class="news-date" *ngIf="scienceAndTechnologyBreakingNews != null">
+                                                <i class="fa fa-calendar"></i>{{scienceAndTechnologyBreakingNews.posted}}</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-md-7">
+                                    <div class="container" *ngFor="let scienceAndTechnologyNews of scienceAndTechnologyLatestNews">
+                                        <a class="news-item" *ngIf="scienceAndTechnologyNews != null" [routerLink]="['/news/','science',scienceAndTechnologyNews.articleId]">
+                                            <figure class="news-img">
+                                                <img *ngIf="scienceAndTechnologyNews != null" [src]="scienceAndTechnologyNews.imageUrl" alt="" onerror="this.src='./assets/images/noimage.jpg'">
+                                            </figure>
+                                            <div class="news-text">
+                                                <h5 *ngIf="scienceAndTechnologyNews != null" [innerHtml]="scienceAndTechnologyNews.title"></h5>
+                                                <p class="news-date" *ngIf="scienceAndTechnologyNews != null">
+                                                    <i class="fa fa-calendar"></i>{{scienceAndTechnologyNews.posted}}</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="more-block">
+                                <a class="more-btn" [routerLink]="['/news/science']">Read More
+                                    <i class="fa fa-angle-double-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="total-news-wrap">
+                        <h3>Health and Living News</h3>
+                        <div class="news-format-one">
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <a class="news-item news-item-big" *ngIf="healthAndLivingBreakingNews != null" [routerLink]="['/news/','health',healthAndLivingBreakingNews.articleId]">
+                                        <figure class="news-img">
+                                            <img *ngIf="healthAndLivingBreakingNews != null" [src]="healthAndLivingBreakingNews.imageUrl" alt="" onerror="this.src='./assets/images/noimage.jpg'">
+                                        </figure>
+                                        <div class="news-text">
+                                            <h5 *ngIf="healthAndLivingBreakingNews != null" [innerHtml]="healthAndLivingBreakingNews.title"></h5>
+                                            <p class="news-desc" *ngIf="healthAndLivingBreakingNews != null" [innerHtml]="healthAndLivingBreakingNews.abstract"></p>
+                                            <p class="news-date" *ngIf="healthAndLivingBreakingNews != null">
+                                                <i class="fa fa-calendar"></i>{{healthAndLivingBreakingNews.posted}}</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-md-7">
+                                    <div class="container" *ngFor="let healthAndLivingNews of healthAndLivingLatestNews">
+                                        <a class="news-item" *ngIf="healthAndLivingNews != null" [routerLink]="['/news/','health',healthAndLivingNews.articleId]">
+                                            <figure class="news-img">
+                                                <img *ngIf="healthAndLivingNews != null" [src]="healthAndLivingNews.imageUrl" alt="" onerror="this.src='./assets/images/noimage.jpg'">
+                                            </figure>
+                                            <div class="news-text">
+                                                <h5 *ngIf="healthAndLivingNews != null" [innerHtml]="healthAndLivingNews.title"></h5>
+                                                <p class="news-date" *ngIf="healthAndLivingNews != null">
+                                                    <i class="fa fa-calendar"></i>{{healthAndLivingNews.posted}}</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="more-block">
+                                <a class="more-btn" [routerLink]="['/news/health']">Read More
+                                    <i class="fa fa-angle-double-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

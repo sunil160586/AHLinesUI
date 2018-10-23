@@ -1,0 +1,24 @@
+<div class="latest-audios-wrap">
+    <h3>Movie Audios</h3>
+    <div class="news-format-one">
+        <div class="row">
+            <div class="col-md-6" *ngFor="let audio of movieAudios">
+                <a href="#" class="news-item">
+                    <figure class="news-img">
+                        <img *ngIf="audio != null" [src]="audio.imageUrl" alt="" onerror="this.src='./assets/images/noimage.jpg'">
+                    </figure>
+                    <div class="news-text">
+                        <h5 *ngIf="audio != null" [innerHtml]="audio.movieName"></h5>
+                        <p class="play-btn">
+                            <i class="fa fa-play"></i> Play</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="more-block">
+            <a href="#" class="more-btn">Read More
+                <i class="fa fa-angle-double-right"></i>
+            </a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+<div class="main-wrap">
+    <div class="container">
+        <div class="main-block news-separate-page">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="latest-news-wrap">
+                        <h3>TRENDING NEWS</h3>
+                        <div class="news-format-one news-format-two">
+                            <div class="row">
+                                <div class="col-md-6" *ngFor="let trendingNews of moreTrendingNews">
+                                    <a class="news-item news-item-big" [routerLink]="[trendingNews.prefixUrl, trendingNews.articleId]">
+                                        <figure class="news-img">
+                                            <img *ngIf="trendingNews != null" [src]="trendingNews.imageMediumUrl" alt="" onerror="this.src='./assets/images/noimage.jpg'">
+                                        </figure>
+                                        <div class="news-text">
+                                            <p class="news-date" *ngIf="trendingNews != null">
+                                                <i class="fa fa-calendar"></i>{{trendingNews.releaseDate | dateTimeBasedOnTimeZone}}</p>
+                                            <h5 *ngIf="trendingNews != null" [innerHtml]="trendingNews.title"></h5>
+                                            <p class="news-desc" *ngIf="trendingNews != null" [innerHtml]="trendingNews.abstract"></p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="sidebar">
+                        <div class="sidebar-block">
+                            <div class="ad-block">
+                                <a href="#" target="_blank">
+                                    <img src="assets/images/ad2.jpg" alt="Ad">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="sidebar-block">
+                            <div class="ad-block">
+                                <iframe src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-4175750948397823&output=html&h=250&slotname=3153467036&adk=6794524&adf=1000795927&w=300&lmt=1518963838&loeid=38893312%2C332260005&url=http%3A%2F%2Fwww.andhraheadlines.com%2Fnews%2Fspecial%2F&flash=28.0.0&wgl=1&adsid=NT&dt=1518966095412&bpp=8&bdt=1027&fdt=36&idt=145&shv=r20180214&cbv=r20170110&saldr=sa&prev_fmts=560x90&correlator=6257653880146&frm=20&ga_vid=981410260.1518252429&ga_sid=1518963454&ga_hid=1971108039&ga_fc=1&pv=1&icsg=2&nhd=1&dssz=2&mdo=0&mso=0&u_tz=330&u_his=8&u_java=0&u_h=768&u_w=1366&u_ah=728&u_aw=1366&u_cd=24&u_nplug=1&u_nmime=2&adx=878&ady=213&biw=1349&bih=654&abxe=1&scr_x=0&scr_y=71&eid=21061122%2C38893302%2C191880502%2C332260001%2C389613000%2C41667001&oid=3&ref=http%3A%2F%2Fwww.andhraheadlines.com%2Fnews%2Fhealth%2F&rx=0&eae=0&fc=528&brdim=%2C%2C-8%2C-8%2C1366%2C0%2C1382%2C744%2C1366%2C654&vis=1&rsz=d%7C%7CeE%7C&abl=CS&ppjl=f&pfx=0&fu=16&bc=1&jar=2018-2-18-14&ifi=2&xpc=PzI5nP0UNH&p=http%3A//www.andhraheadlines.com&dtd=190"
+                                    frameborder="0"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

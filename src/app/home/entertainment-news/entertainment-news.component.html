@@ -1,0 +1,39 @@
+<div class="entertainment-wrap">
+    <h3>Entertainment News</h3>
+    <div class="news-format-one">
+        <div class="row">
+            <div class="col-md-6">
+                <a class="news-item news-item-big" *ngIf="latestEntertainmentNews != null" [routerLink]="['/movies/news/', latestEntertainmentNews.articleId]">
+                    <figure class="news-img">
+                        <img *ngIf="latestEntertainmentNews != null" [src]="latestEntertainmentNews.imageUrl" alt="" onerror="this.src='./assets/images/noimage250x250.jpg'">
+                    </figure>
+                    <div class="news-text">
+                        <h5 *ngIf="latestEntertainmentNews != null" [innerHtml]="latestEntertainmentNews.title"></h5>
+                        <p class="news-desc" *ngIf="latestEntertainmentNews != null" [innerHtml]="latestEntertainmentNews.abstract"></p>
+                        <p class="news-date" *ngIf="latestEntertainmentNews != null">
+                            <i class="fa fa-calendar"></i>{{latestEntertainmentNews.posted}}</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6">
+                <div *ngFor="let news of entertainmentNews">
+                    <a class="news-item" *ngIf="news != null" [routerLink]="['/movies/news/', news.articleId]">
+                        <figure class="news-img">
+                            <img *ngIf="news != null" [src]="news.imageSmallUrl" alt="" onerror="this.src='./assets/images/noimage80x80.jpg'">
+                        </figure>
+                        <div class="news-text">
+                            <h5 *ngIf="news != null" [innerHtml]="news.title"></h5>
+                            <p class="news-date" *ngIf="news != null">
+                                <i class="fa fa-calendar"></i>{{news.posted}}</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="more-block">
+            <a class="more-btn" [routerLink]="['/movies/news']">Read More
+                <i class="fa fa-angle-double-right"></i>
+            </a>
+        </div>
+    </div>
+</div>

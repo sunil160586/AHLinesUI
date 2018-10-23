@@ -1,0 +1,13 @@
+<div class="gallery-videos-wrap sidebar-block">
+    <h3>Latest Videos</h3>
+    <div class="tabs-text latest-videos">
+        <a class="news-item" [routerLink]="['/videos/latest/', video.id]" *ngFor="let video of latestVideos">
+            <figure class="news-img">
+                <img *ngIf="video != null" [src]="video.imageUrl" alt="" onerror="this.src='./assets/images/noimage.jpg'">
+            </figure>
+            <div class="news-text">
+                <h5 *ngIf="video != null" [innerHtml]="video.title"></h5>
+            </div>
+        </a>
+    </div>
+</div>

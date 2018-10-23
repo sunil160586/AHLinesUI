@@ -1,0 +1,37 @@
+<div class="trending-news-wrap">
+    <h3>TRENDING NEWS</h3>
+    <div class="news-format-one">
+        <div class="row">
+            <div class="col-md-6">
+                <a class="news-item news-item-big" *ngIf="trendingBreakingNews != null" [routerLink]="[trendingBreakingNews.prefixUrl, trendingBreakingNews.articleId]">
+                    <figure class="news-img">
+                        <img *ngIf="trendingBreakingNews != null" [src]="trendingBreakingNews.imageUrl" alt="" onerror="this.src='./assets/images/noimage250x250.jpg'">
+                    </figure>
+                    <div class="news-text">
+                        <h5 *ngIf="trendingBreakingNews != null" [innerHtml]="trendingBreakingNews.title"></h5>
+                        <p class="news-desc" *ngIf="trendingBreakingNews !=null" [innerHtml]="trendingBreakingNews.abstract"></p>
+                        <p class="news-date" *ngIf="trendingBreakingNews != null">
+                            <i class="fa fa-calendar"></i>{{trendingBreakingNews.posted}}</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6">
+                <a class="news-item" [routerLink]="[news.prefixUrl, news.articleId]" *ngFor="let news of trendingLatestNews">
+                    <figure class="news-img">
+                        <img *ngIf="news != null" [src]="news.imageSmallUrl" alt="" onerror="this.src='./assets/images/noimage80x80.jpg'">
+                    </figure>
+                    <div class="news-text">
+                        <h5 *ngIf="news != null" [innerHtml]="news.title"></h5>
+                        <p class="news-date">
+                            <i class="fa fa-calendar"></i> {{news.posted}}</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="more-block">
+            <a class="more-btn" [routerLink]="['/home/news/trending']">Read More
+                <i class="fa fa-angle-double-right"></i>
+            </a>
+        </div>
+    </div>
+</div>

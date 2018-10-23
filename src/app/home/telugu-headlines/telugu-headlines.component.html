@@ -1,0 +1,13 @@
+<div class="telugu-headlines-wrap sidebar-block">
+    <h3>Telugu Headlines</h3>
+    <ul class="telugu-headlines">
+        <li *ngFor="let news of teluguHeadlines">
+            <a *ngIf="news != null" [innerHtml]="news.title" [routerLink]="[teluguWebSiteUrl, news.prefixUrl, news.id]"></a>
+        </li>
+    </ul>
+    <div class="more-block">
+        <a [href]="teluguWebSiteUrl" class="more-btn">Read More
+            <i class="fa fa-angle-double-right"></i>
+        </a>
+    </div>
+</div>

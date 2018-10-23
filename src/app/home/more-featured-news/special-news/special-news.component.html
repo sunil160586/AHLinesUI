@@ -1,0 +1,17 @@
+<h3>Special Article</h3>
+<a class="news-item news-item-big" *ngIf="specialBreakingNews != null" [routerLink]="['/news/', 'special', specialBreakingNews.articleId]">
+    <figure class="news-img">
+        <img *ngIf="specialBreakingNews != null" [src]="specialBreakingNews.imageUrl" alt="" onerror="this.src='./assets/images/noimage.jpg'">
+    </figure>
+    <div class="news-text">
+        <h5 *ngIf="specialBreakingNews != null" [innerHtml]="specialBreakingNews.title"></h5>
+        <p class="news-desc" *ngIf="specialBreakingNews != null" [innerHtml]="specialBreakingNews.abstract"></p>
+        <p class="news-date" *ngIf="specialBreakingNews != null">
+            <i class="fa fa-calendar"></i>{{specialBreakingNews.posted}}</p>
+    </div>
+</a>
+<div class="more-block">
+    <a class="more-btn" [routerLink]="['/news/special']">Read More
+        <i class="fa fa-angle-double-right"></i>
+    </a>
+</div>

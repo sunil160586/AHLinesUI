@@ -1,0 +1,10 @@
+<ngx-slick class="slide-img" [config]="slideConfig">
+    <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+        <a *ngIf="slide != null && slide.bannerId != null" [routerLink]="[slide.prefixUrl, slide.bannerId]">
+            <img *ngIf="slide != null" [src]="slide.imageUrl" alt="" width="100%" onerror="this.src='./assets/images/noimage.jpg'">
+        </a>
+        <a *ngIf="slide != null && slide.bannerId == null" [href]="slide.linkUrl">
+            <img *ngIf="slide != null" [src]="slide.imageUrl" alt="" width="100%" onerror="this.src='./assets/images/noimage.jpg'">
+        </a>
+    </div>
+</ngx-slick>

@@ -1,0 +1,25 @@
+<div class="gallery-videos-wrap sidebar-block">
+    <h3>Featured News</h3>
+    <div class="tabs-wrap">
+        <tabset>
+            <tab heading="Latest Gallery" active="true" (select)="onTabChange($event)">
+                <div class="tabs-text">
+                    <ul *ngFor="let gallery of latestGallery">
+                        <li>
+                            <a *ngIf="gallery != null" [innerHtml]="gallery.title" [routerLink]="[gallery.prefixUrl, gallery.articleId]"></a>
+                        </li>
+                    </ul>
+                </div>
+            </tab>
+            <tab heading="Latest Videos" (select)="onTabChange($event)">
+                <div class="tabs-text">
+                    <ul *ngFor="let video of latestVideos">
+                        <li>
+                            <a *ngIf="video != null" [innerHtml]="video.title" [routerLink]="['/videos/latest/', video.id]"></a>
+                        </li>
+                    </ul>
+                </div>
+            </tab>
+        </tabset>
+    </div>
+</div>

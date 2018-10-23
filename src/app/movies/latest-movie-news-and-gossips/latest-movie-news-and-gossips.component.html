@@ -1,0 +1,24 @@
+<div class="latest-news-wrap">
+    <h3>Latest Movie News And Gossips</h3>
+    <div class="news-format-one">
+        <div class="row">
+            <div class="col-md-6" *ngFor="let movieNewsAndGossips of latestMovieNewsAndGossips">
+                <a class="news-item" [routerLink]="['/movies/news/', movieNewsAndGossips.articleId]">
+                    <figure class="news-img">
+                        <img *ngIf="movieNewsAndGossips != null" [src]="movieNewsAndGossips.imageSmallUrl" alt="" onerror="this.src='./assets/images/noimage.jpg'">
+                    </figure>
+                    <div class="news-text">
+                        <h5 *ngIf="movieNewsAndGossips != null" [innerHtml]="movieNewsAndGossips.title"></h5>
+                        <p class="news-date" *ngIf="movieNewsAndGossips != null">
+                            <i class="fa fa-calendar"></i>{{movieNewsAndGossips.releaseDate | dateTimeBasedOnTimeZone}}</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="more-block">
+            <a class="more-btn" [routerLink]="['/movies/news']">Read More
+                <i class="fa fa-angle-double-right"></i>
+            </a>
+        </div>
+    </div>
+</div>

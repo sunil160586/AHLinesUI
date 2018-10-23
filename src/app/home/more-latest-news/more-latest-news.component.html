@@ -1,0 +1,37 @@
+<div class="main-wrap">
+    <div class="container">
+        <div class="main-block news-separate-page">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="latest-news-wrap">
+                        <h3>LATEST NEWS</h3>
+                        <div class="news-format-one news-format-two">
+                            <div class="row">
+                                <div class="col-md-6" *ngFor="let latestNews of moreLatestNews">
+                                    <a class="news-item news-item-big" [routerLink]="[latestNews.prefixUrl, latestNews.articleId]">
+                                        <figure class="news-img">
+                                            <img *ngIf="latestNews != null" [src]="latestNews.imageUrl" alt="" onerror="this.src='./assets/images/noimage250x250.jpg'">
+                                        </figure>
+                                        <div class="news-text">
+                                            <h5 *ngIf="latestNews != null" [innerHtml]="latestNews.title"></h5>
+                                            <p class="news-desc" *ngIf="latestNews != null" [innerHtml]="latestNews.abstract"></p>
+                                            <p class="news-date" *ngIf="latestNews != null">
+                                                <i class="fa fa-calendar"></i>{{latestNews.posted}}</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="sidebar">
+                        <more-featured-news></more-featured-news>
+                        <ad-block [adClient]="'ca-pub-4175750948397823'" [adSlot]="6234503694" [adWidth]="300"
+                            [adHeight]="250"></ad-block>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+<div class="fashion-life-style-wrap">
+    <h3>Fashion &amp; Life Style News</h3>
+    <div class="news-format-one">
+        <div class="row">
+            <div class="col-md-6">
+                <a class="news-item news-item-big" *ngIf="fashionAndLifeStyleBreakingNews != null" [routerLink]="['/news/fashion/', fashionAndLifeStyleBreakingNews.articleId]">
+                    <figure class="news-img">
+                        <img *ngIf="fashionAndLifeStyleBreakingNews != null" [src]="fashionAndLifeStyleBreakingNews.imageUrl"
+                            alt="" onerror="this.src='./assets/images/noimage250x250.jpg'">
+                    </figure>
+                    <div class="news-text">
+                        <h5 *ngIf="fashionAndLifeStyleBreakingNews != null" [innerHtml]="fashionAndLifeStyleBreakingNews.title"></h5>
+                        <p class="news-desc" *ngIf="fashionAndLifeStyleBreakingNews != null" [innerHtml]="fashionAndLifeStyleBreakingNews.abstract"></p>
+                        <p class="news-date" *ngIf="fashionAndLifeStyleBreakingNews != null">
+                            <i class="fa fa-calendar"></i>{{fashionAndLifeStyleBreakingNews.posted}}</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6">
+                <div *ngFor="let fashionAndLifeStyleNews of fashionAndLifeStyleLatestNews">
+                    <a class="news-item" *ngIf="fashionAndLifeStyleNews != null" [routerLink]="['/news/fashion/', fashionAndLifeStyleNews.articleId]">
+                        <figure class="news-img">
+                            <img *ngIf="fashionAndLifeStyleNews != null" [src]="fashionAndLifeStyleNews.imageSmallUrl"
+                                alt="" onerror="this.src='./assets/images/noimage80x80.jpg'">
+                        </figure>
+                        <div class="news-text">
+                            <h5 *ngIf="fashionAndLifeStyleNews != null" [innerHtml]="fashionAndLifeStyleNews.title"></h5>
+                            <p class="news-date" *ngIf="fashionAndLifeStyleNews != null">
+                                <i class="fa fa-calendar"></i>{{fashionAndLifeStyleNews.posted}}</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="more-block">
+            <a class="more-btn" [routerLink]="['/news/fashion']">Read More
+                <i class="fa fa-angle-double-right"></i>
+            </a>
+        </div>
+    </div>
+</div>

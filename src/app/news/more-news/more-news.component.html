@@ -1,0 +1,8 @@
+<div class="telugu-headlines-wrap sidebar-block">
+    <h3>More {{category}} News</h3>
+    <ul class="telugu-headlines">
+        <li *ngFor="let news of moreNews">
+            <a *ngIf="news != null" [innerHtml]="news.title" [routerLink]="['/news/', category, news.articleId]"></a>
+        </li>
+    </ul>
+</div>

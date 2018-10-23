@@ -1,0 +1,47 @@
+<div class="main-wrap">
+    <div class="container">
+        <div class="main-block news-separate-page">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="latest-news-wrap">
+                        <h3 [innerHtml]="newsType"></h3>
+                        <div class="news-format-one news-format-two">
+                            <div class="row">
+                                <div class="col-md-6" *ngFor="let data of news">
+                                    <a class="news-item news-item-big" [routerLink]="['/news/', category, data.articleId]">
+                                        <figure class="news-img">
+                                            <img *ngIf="data != null" [src]="data.imageUrl" alt="" onerror="this.src='./assets/images/noimage330x250.jpg'">
+                                        </figure>
+                                        <div class="news-text">
+                                            <p class="news-date" *ngIf="data != null">
+                                                <i class="fa fa-calendar"></i>{{data.posted}}</p>
+                                            <h5 *ngIf="data != null" [innerHtml]="data.title"></h5>
+                                            <p class="news-desc" *ngIf="data != null" [innerHtml]="data.abstract"></p>
+                                            <p class="read-more">Read More
+                                                <i class="fa fa-angle-double-right"></i>
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="sidebar">
+                        <div class="telugu-headlines-wrap sidebar-block">
+                            <h3>News Headlines</h3>
+                            <ul class="telugu-headlines">
+                                <li *ngFor="let news of newsHeadlines">
+                                    <a *ngIf="news != null" [innerHtml]="news.title" [routerLink]="[news.prefixUrl, news.articleId]"></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <ad-block [adClient]="'ca-pub-4175750948397823'" [adSlot]="3153467036" [adWidth]="300"
+                            [adHeight]="250"></ad-block>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

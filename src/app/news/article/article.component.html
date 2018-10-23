@@ -1,0 +1,35 @@
+<div class="main-wrap">
+    <div class="container">
+        <div class="main-block news-inner-page">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="blog-inner-wrap">
+                        <h1 *ngIf="newsArticle != null" [innerHtml]="newsArticle.title"></h1>
+                        <figure class="blog-img">
+                            <img *ngIf="newsArticle != null" [src]="newsArticle.imageUrl" alt="" onerror="this.src='./assets/images/noimage.jpg'">
+                        </figure>
+                        <div class="blog-content" *ngIf="newsArticle != null" [innerHtml]="newsArticle.body | changeNewLineToBreak">
+                        </div>
+                        <br>
+                        <div class="tags" *ngIf="newsArticle != null">
+                            <strong>Tags:</strong>
+                            {{newsArticle.tagLine}}
+                        </div>
+                        <div class="share-article">
+                            <p>Share this Article now.</p>
+                            <share-buttons theme="circles-dark" show="5"></share-buttons>
+                        </div>
+                        <fb-comments [href]="fbCommentsHref" numposts="10" width="710px"></fb-comments>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="sidebar">
+                        <more-news></more-news>
+                        <ad-block [adClient]="'ca-pub-4175750948397823'" [adSlot]="6234503694" [adWidth]="300"
+                            [adHeight]="250"></ad-block>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="movie-reviews-wrap sidebar-block">
+    <h3>Movie Reviews</h3>
+    <div class="reviews-block">
+        <a class="news-item news-item-big text-center" [routerLink]="['/movies/reviews/', review.movieId]" *ngFor="let review of moviesReviews">
+            <figure class="news-img">
+                <img *ngIf="review != null" [src]="review.imageUrl" alt="" onerror="this.src='./assets/images/noimage.jpg'">
+            </figure>
+            <div class="news-text">
+                <h5 *ngIf="review != null" [innerHtml]="review.movieName"></h5>
+                <p class="rating" *ngIf="review != null" [innerHtml]="review.rating"></p>
+            </div>
+        </a>
+    </div>
+</div>

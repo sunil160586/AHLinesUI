@@ -1,0 +1,148 @@
+<div class="main-wrap">
+    <div class="container">
+        <div class="main-block">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="accordions-wrap latest-videos-wrap">
+                        <div id="accordion">
+                            <accordion [closeOthers]="true">
+                                <accordion-group class="gallery-accordion" heading="Latest Videos" [isOpened]="true" (onOpen)="getLatestVideos()">
+                                    <div class="gallery-acc-content">
+                                        <div class="news-format-one news-format-two">
+                                            <div class="row">
+                                                <div class="col-md-4" *ngFor="let video of videos">
+                                                    <a *ngIf="video != null" class="news-item news-item-big" [routerLink]="['/videos/', category, video.id]">
+                                                        <figure class="news-img">
+                                                            <img *ngIf="video != null" [src]="video.imageUrl" alt="" onerror="this.src='./assets/images/noimage.jpg'">
+                                                            <span class="fa fa-play-circle-o"></span>
+                                                        </figure>
+                                                        <div class="news-text">
+                                                            <h5 *ngIf="video != null" [innerHtml]="video.title"></h5>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </accordion-group>
+                                <accordion-group class="gallery-accordion" heading="Browse More {{category}} Videos" (onOpen)="getMoreVideos()">
+                                    <div class="gallery-acc-content">
+                                        <div class="news-format-one news-format-two">
+                                            <div class="row">
+                                                <div class="col-md-4" *ngFor="let video of moreVideos">
+                                                    <a *ngIf="video != null" class="news-item news-item-big" [routerLink]="['/videos/', category, video.id]">
+                                                        <figure class="news-img">
+                                                            <img *ngIf="video != null" [src]="video.imageUrl" alt="" onerror="this.src='./assets/images/noimage.jpg'">
+                                                            <span class="fa fa-play-circle-o"></span>
+                                                        </figure>
+                                                        <div class="news-text">
+                                                            <h5 *ngIf="video != null" [innerHtml]="video.title"></h5>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </accordion-group>
+                            </accordion>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="sidebar">
+                        <div class="sidebar-block">
+                            <div class="ad-block">
+                                <a href="#" target="_blank">
+                                    <img src="assets/images/ad2.jpg" alt="Ad">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="gallery-videos-wrap sidebar-block">
+                            <h3>FEATURED news</h3>
+                            <div class="tabs-wrap">
+                                <ul class="tabs-links clearfix">
+                                    <li class="active">
+                                        <a href="#">Latest Gallery</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Latest Videos</a>
+                                    </li>
+                                </ul>
+                                <div class="tabs-content">
+                                    <div class="tabs-text">
+                                        <ul>
+                                            <li>
+                                                <a href="#">Prostitution in the name of massage parlour!</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">TDP MP Ramesh suspended from Rajya Sabha</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">TDP takes important decision on SCS!</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Renuka mocks at Modi's Aadhar 'beej' remark!</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">What's AP share in the 24 lakh crores budget?</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Did Modi's speech shock people of AP?</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Needed a second kick: RGV on reuniting with Nagarjuna</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Modi's wife injured in road accident!</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Everyone has social responsibility, not just politicians</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Cong split Andhra like it divided India for political gains</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="tabs-text" style="display: none;">
+                                        <ul>
+                                            <li>
+                                                <a href="#">GST earned 11 crores to Varma!!</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Review: Bhaagamathie</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Review: Chalo</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Review: Touch Chesi Chudu</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Amrita cuts an adult d!ck cake </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Is Rakul dating him?</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Hot Archana reveals her boyfriend!</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Review: Howrah Bridge</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Rebel Star gives secret shock to Sweety</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Amala Paul arrested!!</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

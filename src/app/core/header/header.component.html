@@ -1,0 +1,140 @@
+<header id="header">
+    <div class="container">
+        <div class="logo-header">
+            <a href="index.html" id="logo">
+                <img src="assets/images/logo.png" alt="Andhra Headlines">
+            </a>
+            <ad-block [adClient]="'ca-pub-4175750948397823'" [adSlot]="0485860357" [adWidth]="728" [adHeight]="90"></ad-block>
+            <!-- <ins class="adsbygoogle" style="display:inline-block;height:90px;width: 728px;" data-ad-client="'ca-pub-4175750948397823'"
+                data-ad-slot="0485860357" data-adtest="on"></ins> -->
+        </div>
+    </div>
+    <div class="c-hamburger"><span></span></div>
+    <div class="main-header">
+        <div class="container">
+            <nav class="menu-bar">
+                <ul>
+                    <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                        <a [routerLink]="['/home']">Home</a>
+                    </li>
+                    <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                        <a [routerLink]="['/news']">News</a>
+                        <ul class="dropdown-block">
+                            <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                                <a [routerLink]="['/news/special']">Special</a>
+                            </li>
+                            <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                                <a [routerLink]="['/news/andhra']">Andhra</a>
+                            </li>
+                            <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                                <a [routerLink]="['/news/telangana']">Telangana</a>
+                            </li>
+                            <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                                <a [routerLink]="['/news/sports']">Sports</a>
+                            </li>
+                            <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                                <a [routerLink]="['/news/national']">National</a>
+                            </li>
+                            <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                                <a [routerLink]="['/news/world']">World</a>
+                            </li>
+                            <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                                <a [routerLink]="['/news/nri']">NRI</a>
+                            </li>
+                            <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                                <a [routerLink]="['/news/crime']">Crime</a>
+                            </li>
+                            <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                                <a [routerLink]="['/news/business']">Business</a>
+                            </li>
+                            <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                                <a [routerLink]="['/news/fashion']">Fashion</a>
+                            </li>
+                            <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                                <a [routerLink]="['/news/science']">Science</a>
+                            </li>
+                            <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                                <a [routerLink]="['/news/health']">Health</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                        <a [routerLink]="['/movies']">Movies</a>
+                        <ul class="dropdown-block">
+                            <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                                <a [routerLink]="['/photos/movies']">Photos</a>
+                            </li>
+                            <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                                <a [routerLink]="['/movies/news']">News</a>
+                            </li>
+                            <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                                <a [routerLink]="['/videos/movies']">Videos</a>
+                            </li>
+                            <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                                <a [routerLink]="['/movies/reviews']">Reviews</a>
+                            </li>
+                            <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                                <a href="#">Showtimes</a>
+                            </li>
+                            <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                                <a href="#">Audios</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                        <a [routerLink]="['/photos']">Photos</a>
+                        <ul class="dropdown-block">
+                            <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                                <a [routerLink]="['/photos/actress']">Actress</a>
+                            </li>
+                            <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                                <a [routerLink]="['/photos/actors']">Actors</a>
+                            </li>
+                            <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                                <a [routerLink]="['/photos/movies']">Movies</a>
+                            </li>
+                            <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                                <a [routerLink]="['/photos/events']">Events</a>
+                            </li>
+                            <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                                <a [routerLink]="['/photos/wallpapers']">Wallpapers</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                        <a [routerLink]="['/videos']">Videos</a>
+                        <ul class="dropdown-block">
+                            <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                                <a [routerLink]="['/videos/sports']">Sports</a>
+                            </li>
+                            <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                                <a [routerLink]="['/videos/political']">Political</a>
+                            </li>
+                            <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                                <a [routerLink]="['/videos/movies']">Movies</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                        <a href="#" class="telugu-btn">తెలుగు వర్షన్</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="container">
+        <div class="breaking-news-block">
+            <div class="breaking-head">Breaking News
+                <i class="fa fa-angle-double-right"></i>
+            </div>
+            <marquee behavior="scroll" direction="left" class="breaking-slides" loop="true" onmouseover="this.stop();"
+                onmouseout="this.start();">
+                <ul>
+                    <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" *ngFor="let news of scrollingNews">
+                        <a *ngIf="news != null" [innerHtml]="news.title" [routerLink]="[teluguWebSiteUrl, news.prefixUrl, news.id]"></a>
+                    </li>
+                </ul>
+            </marquee>
+        </div>
+    </div>
+</header>

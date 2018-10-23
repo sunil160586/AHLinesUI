@@ -1,0 +1,18 @@
+<div class="image-gallery-wrap">
+    <h3>Photo Gallery</h3>
+    <ul>
+        <li *ngFor="let gallery of photoGallery">
+            <a *ngIf="gallery != null" [routerLink]="[gallery.prefixUrl, gallery.galleryId]">
+                <figure>
+                    <img *ngIf="gallery != null" [src]="gallery.imageUrl" alt="" onerror="this.src='./assets/images/noimage.jpg'">
+                </figure>
+                <figcaption>{{gallery.title}}</figcaption>
+            </a>
+        </li>
+    </ul>
+    <div class="more-block">
+        <a class="more-btn" [routerLink]="['/photos']">Read More
+            <i class="fa fa-angle-double-right"></i>
+        </a>
+    </div>
+</div>

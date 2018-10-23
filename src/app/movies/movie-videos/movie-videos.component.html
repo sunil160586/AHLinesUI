@@ -1,0 +1,23 @@
+<div class="latest-videos-wrap">
+    <h3>Movie Videos</h3>
+    <div class="news-format-one news-format-two">
+        <div class="row">
+            <div class="col-md-4" *ngFor="let video of movieVideos">
+                <a *ngIf="video != null" class="news-item news-item-big" [routerLink]="['/videos/movies/', video.id]">
+                    <figure class="news-img">
+                        <img *ngIf="video != null" [src]="video.imageUrl" alt="" onerror="this.src='./assets/images/noimage.jpg'">
+                        <span class="fa fa-play-circle-o"></span>
+                    </figure>
+                    <div class="news-text">
+                        <h5 *ngIf="video != null" [innerHtml]="video.title"></h5>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="more-block">
+            <a class="more-btn" [routerLink]="['/videos/movies']">Read More
+                <i class="fa fa-angle-double-right"></i>
+            </a>
+        </div>
+    </div>
+</div>

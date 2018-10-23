@@ -1,0 +1,131 @@
+<div class="main-wrap">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="guess-wrap">
+                    <h3>{{name}}</h3>
+                    <div id="divSelectedImageModal" class="modal fade">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <img *ngIf="selectedImage" [src]="selectedImage.largeImageUrl" onerror="this.src='./assets/images/noimage.jpg'">
+                                    <div class="arrow-back" (click)=navigate(false)>
+                                        <i class="fa fa-arrow-circle-left"></i>
+                                    </div>
+                                    <div class="arrow-forward" (click)=navigate(true)>
+                                        <i class="fa fa-arrow-circle-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-single">
+                        <ul>
+                            <li *ngFor="let gallery of galleries | paginate: { itemsPerPage: 20, currentPage: page }; let i = index">
+                                <figure>
+                                    <img *ngIf="gallery != null" [src]="gallery.smallImageUrl" alt="" data-toggle="modal" data-target="#divSelectedImageModal"
+                                        (click)="setSelectedImage(gallery)" onerror="this.src='./assets/images/noimage.jpg'">
+                                </figure>
+                            </li>
+                        </ul>
+                    </div>
+                    <pagination-controls class="paginations-block" (pageChange)="page=$event"></pagination-controls>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="sidebar">
+                    <div class="sidebar-block">
+                        <div class="ad-block">
+                            <a href="#" target="_blank">
+                                <img src="assets/images/ad2.jpg" alt="Ad">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="gallery-videos-wrap sidebar-block">
+                        <h3>FEATURED news</h3>
+                        <div class="tabs-wrap">
+                            <ul class="tabs-links clearfix">
+                                <li class="active">
+                                    <a href="#">Latest Gallery</a>
+                                </li>
+                                <li>
+                                    <a href="#">Latest Videos</a>
+                                </li>
+                            </ul>
+                            <div class="tabs-content">
+                                <div class="tabs-text">
+                                    <ul>
+                                        <li>
+                                            <a href="#">Prostitution in the name of massage parlour!</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">TDP MP Ramesh suspended from Rajya Sabha</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">TDP takes important decision on SCS!</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Renuka mocks at Modi's Aadhar 'beej' remark!</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">What's AP share in the 24 lakh crores budget?</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Did Modi's speech shock people of AP?</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Needed a second kick: RGV on reuniting with Nagarjuna</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Modi's wife injured in road accident!</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Everyone has social responsibility, not just politicians</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Cong split Andhra like it divided India for political gains</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="tabs-text" style="display: none;">
+                                    <ul>
+                                        <li>
+                                            <a href="#">GST earned 11 crores to Varma!!</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Review: Bhaagamathie</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Review: Chalo</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Review: Touch Chesi Chudu</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Amrita cuts an adult d!ck cake </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Is Rakul dating him?</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Hot Archana reveals her boyfriend!</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Review: Howrah Bridge</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Rebel Star gives secret shock to Sweety</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Amala Paul arrested!!</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

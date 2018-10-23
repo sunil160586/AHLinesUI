@@ -1,0 +1,15 @@
+<div class="market-watch-wrap sidebar-block">
+    <h3>Market watch</h3>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>India</th>
+                <th>Rupees</th>
+            </tr>
+            <tr *ngFor="let market of marketWatch">
+                <td>{{market.typeName}}</td>
+                <td>{{market.typeValue}}</td>
+            </tr>
+        </thead>
+    </table>
+</div>
